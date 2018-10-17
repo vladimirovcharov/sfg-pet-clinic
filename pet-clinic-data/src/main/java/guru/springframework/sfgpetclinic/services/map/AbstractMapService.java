@@ -9,7 +9,7 @@ import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.Set;
 
-public class AbstractMapService<T extends BaseEntity, ID extends Long> {
+class AbstractMapService<T extends BaseEntity, ID extends Long> {
 
 	private Map<Long, T> map = new HashMap<>();
 
@@ -42,7 +42,7 @@ public class AbstractMapService<T extends BaseEntity, ID extends Long> {
 	}
 
 	private Long getNextId() {
-		Long nextId = null;
+		long nextId;
 
 		try {
 			nextId = Collections.max(map.keySet()) + 1;
