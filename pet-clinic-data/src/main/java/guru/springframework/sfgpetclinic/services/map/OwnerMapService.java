@@ -7,7 +7,9 @@ import guru.springframework.sfgpetclinic.services.PetService;
 import guru.springframework.sfgpetclinic.services.PetTypeService;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
+import java.util.List;
 import java.util.Set;
 
 @Service
@@ -76,5 +78,11 @@ public class OwnerMapService extends AbstractMapService<Owner, Long> implements 
 				.stream()
 				.filter(owner -> owner.getLastName().equalsIgnoreCase(lastName))
 				.findFirst().orElse(null);
+	}
+
+	@Override
+	public List<Owner> findAllByLastNameLike(String lastName) {
+		//todo: implement
+		throw new NotImplementedException();
 	}
 }
